@@ -353,7 +353,7 @@ const contatosSlice = createSlice({
             quantidade: "2 a 3",
             descricao:
               "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-            capa: "../../public/374d0118af6a26d9cdb2300a285d481a.png",
+            capa: pizza,
             id: Math.floor(Math.random() * 1000000),
             valor: 45,
           },
@@ -362,7 +362,7 @@ const contatosSlice = createSlice({
             quantidade: "2 a 3",
             descricao:
               "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-            capa: "../../public/374d0118af6a26d9cdb2300a285d481a.png",
+            capa: pizza,
             id: Math.floor(Math.random() * 1000000),
             valor: 45,
           },
@@ -371,7 +371,7 @@ const contatosSlice = createSlice({
             quantidade: "2 a 3",
             descricao:
               "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-            capa: "../../public/374d0118af6a26d9cdb2300a285d481a.png",
+            capa: pizza,
             id: Math.floor(Math.random() * 1000000),
             valor: 45,
           },
@@ -380,7 +380,7 @@ const contatosSlice = createSlice({
             quantidade: "2 a 3",
             descricao:
               "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-            capa: "../../public/374d0118af6a26d9cdb2300a285d481a.png",
+            capa: pizza,
             id: Math.floor(Math.random() * 1000000),
             valor: 45,
           },
@@ -389,7 +389,7 @@ const contatosSlice = createSlice({
             quantidade: "2 a 3",
             descricao:
               "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-            capa: "../../public/374d0118af6a26d9cdb2300a285d481a.png",
+            capa: pizza,
             id: Math.floor(Math.random() * 1000000),
             valor: 45,
           },
@@ -398,7 +398,7 @@ const contatosSlice = createSlice({
             quantidade: "2 a 3",
             descricao:
               "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-            capa: "../../public/374d0118af6a26d9cdb2300a285d481a.png",
+            capa: pizza,
             id: Math.floor(Math.random() * 1000000),
             valor: 45,
           },

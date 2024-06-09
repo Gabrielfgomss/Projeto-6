@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import imagemFundo from "../../public/imagemFundo.svg"
 
 export const Container = styled.header<{restaurante?: boolean}>`
   display: flex;
@@ -7,7 +8,7 @@ export const Container = styled.header<{restaurante?: boolean}>`
   justify-content: center;
   padding: 4em;
   gap: 5em;
-  background-image: url("../../public/imagemFundo.svg");
+  background-image: url(${imagemFundo});
   text-align: center;
   color: #E66767;
 
