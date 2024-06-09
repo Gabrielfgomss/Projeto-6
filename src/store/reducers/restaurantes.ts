@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import japaneseCover from "../../public/28895a55942ffb290182da4c32ba645d.png";
+import japaneseCover from "../../../public/28895a55942ffb290182da4c32ba645d.png";
 
 const contatosSlice = createSlice({
   name: "restaurantes",
