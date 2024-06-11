@@ -16,10 +16,11 @@ export const Carrinho = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.2em;
     padding: 0.5em 1em;
 
     p {
+      font-size: 16px;
       text-align: left;
     }
 

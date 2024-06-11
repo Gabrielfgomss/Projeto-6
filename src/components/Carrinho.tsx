@@ -13,9 +13,8 @@ interface CarrinhoContainerProps {
 function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
   const { itens } = useSelector((state: RootReducer) => state.carrinho);
   const dispatch = useDispatch();
-
+  console.log(itens)
   const handleRemove = (id: number) => {
-    console.log(id);
     dispatch(remover(id));
   };
 
@@ -24,11 +23,11 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
       {itens.map((item) => {
         return (
           <Carrinho key={item.id}>
-            <img src={item.capa} />
+            <img src={item.foto} />
             <div>
               <p>{item.nome}</p>
               <p>
-                {item.valor.toLocaleString("pt-BR", {
+                {Number(item.preco).toLocaleString("pt-BR", {
                   currency: "BRL",
                   style: "currency",
                 })}

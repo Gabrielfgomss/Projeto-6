@@ -13,7 +13,7 @@ export interface CardProps {
   tipoComida?: string;
   titulo: string;
   descricao?: string;
-  nota?: string;
+  nota?: number;
   id: number;
   quantidade?: string;
   valor?: number;
@@ -65,7 +65,8 @@ export const Card = ({
 
   const handleAddToCart = () => {
     if (modalContent) {
-      dispatch(adicionar(modalContent));
+      console.log(modalContent)
+      dispatch(adicionar({foto: capa, nome: titulo, preco: valor, id}));
       setIsModalOpen(false);
     }
   };

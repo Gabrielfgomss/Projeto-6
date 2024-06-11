@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Prato } from "../../utils/models";
+import { Cardapio } from "../../utils/models";
 
 interface CarrinhoState {
-  itens: Prato[];
+  itens: Cardapio[];
 }
 
 const initialState: CarrinhoState = {
   itens: [],
 };
 
-const contatosSlice = createSlice({
+const carrinhoSlice = createSlice({
   name: "carrinho",
   initialState,
   reducers: {
@@ -22,6 +22,6 @@ const contatosSlice = createSlice({
   },
 });
 
-export const { adicionar, remover } = contatosSlice.actions;
+export const { adicionar, remover } = carrinhoSlice.actions;
 
-export default contatosSlice.reducer;
+export default carrinhoSlice.reducer;
