@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 const CheckOutContainer = styled.div`
-  background-color: #e57373;
   padding: 20px;
   border-radius: 8px;
   color: white;
   max-width: 400px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 `;
 
 const Title = styled.h2`

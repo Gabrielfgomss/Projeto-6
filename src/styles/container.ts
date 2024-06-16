@@ -12,6 +12,13 @@ export const Container = styled.header<{restaurante?: boolean}>`
   text-align: center;
   color: #E66767;
 
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 36px;
+  }
+
   a {
     text-decoration: none;
     color: #E66767;

@@ -1,6 +1,7 @@
 import { RootReducer } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 import { EnderecoFormState, updateField } from "../store/reducers/enderecoForm";
+import { Flex, Input, Label } from "../styles/form";
 import Form from "./Form";
 
 interface EnderecoProps {
@@ -17,60 +18,79 @@ function Endereco({ onPrevStep, nextStep }: EnderecoProps) {
   };
 
   const handleSubmit = () => {
-    nextStep()
+    nextStep();
   };
   return (
-    <Form<EnderecoFormState>
+    <Form
       title="Entrega"
-      fields={[
-        {
-          label: "Quem irá receber",
-          name: "nome",
-          type: "text",
-          value: formData.nome,
-          onChange: handleChange,
-        },
-        {
-          label: "Endereço",
-          name: "endereco",
-          type: "text",
-          value: formData.endereco,
-          onChange: handleChange,
-        },
-        {
-          label: "Cidade",
-          name: "cidade",
-          type: "text",
-          value: formData.cidade,
-          onChange: handleChange,
-        },
-        {
-          label: "CEP",
-          name: "cep",
-          type: "text",
-          value: formData.cep,
-          onChange: handleChange,
-        },
-        {
-          label: "Número",
-          name: "numero",
-          type: "text",
-          value: formData.numero,
-          onChange: handleChange,
-        },
-        {
-          label: "Complemento (opcional)",
-          name: "complemento",
-          type: "text",
-          value: formData.complemento || "",
-          onChange: handleChange,
-        },
-      ]}
       onSubmit={handleSubmit}
       onPrevStep={onPrevStep}
       submitButtonText="Continuar com o pagamento"
       prevButtonText="Voltar para o carrinho"
-    ></Form>
+    >
+      <div>
+        <Label htmlFor="nome">Quem irá receber</Label>
+        <Input
+          type="text"
+          id="nome"
+          name="nome"
+          value={formData.nome}
+          onChange={(e) => handleChange("nome", e.target.value)}
+        />
+      </div>
+      <div>
+        <Label htmlFor="endereco">Endereco</Label>
+        <Input
+          type="text"
+          id="endereco"
+          name="endereco"
+          value={formData.endereco}
+          onChange={(e) => handleChange("endereco", e.target.value)}
+        />
+      </div>
+      <div>
+        <Label htmlFor="cidade">Cidade</Label>
+        <Input
+          type="text"
+          id="cidade"
+          name="cidade"
+          value={formData.cidade}
+          onChange={(e) => handleChange("cidade", e.target.value)}
+        />
+      </div>
+      <Flex>
+        <div>
+          <Label htmlFor="cep">CEP</Label>
+          <Input
+            type="text"
+            id="cep"
+            name="cep"
+            value={formData.cep}
+            onChange={(e) => handleChange("cep", e.target.value)}
+          />
+        </div>
+        <div>
+          <Label htmlFor="numero">Número</Label>
+          <Input
+            type="text"
+            id="numero"
+            name="numero"
+            value={formData.numero}
+            onChange={(e) => handleChange("numero", e.target.value)}
+          />
+        </div>
+      </Flex>
+      <div>
+        <Label htmlFor="complemento">Complemento (opcional)</Label>
+        <Input
+          type="text"
+          id="complemento"
+          name="complemento"
+          value={formData.complemento}
+          onChange={(e) => handleChange("complemento", e.target.value)}
+        />
+      </div>
+    </Form>
   );
 }
 

@@ -5,6 +5,7 @@ import {
   PagamentoFormState,
 } from "../store/reducers/pagamentoForm";
 import Form from "./Form";
+import { Flex, Input, Label } from "../styles/form";
 
 interface PagamentoProps {
   onPrevStep: () => void;
@@ -21,53 +22,74 @@ function Pagamento({ onPrevStep, onSubmit, total }: PagamentoProps) {
   };
 
   return (
-    <Form<PagamentoFormState>
-      title={`Pagamento - Valor a pagar ${total.toLocaleString("pt-Br", {
-        style: "currency",
-        currency: "BRL",
-      })}`}
-      fields={[
+    <Form
+      title={`Pagamento - Valor a pagar ${Number(total).toLocaleString(
+        "pt-Br",
         {
-          label: "Nome no cartão",
-          name: "nomeCartao",
-          type: "text",
-          value: formData.nomeCartao,
-          onChange: handleChange,
-        },
-        {
-          label: "Número do cartão",
-          name: "cartaoNum",
-          type: "text",
-          value: formData.cartaoNum,
-          onChange: handleChange,
-        },
-        {
-          label: "CVV",
-          name: "cvv",
-          type: "text",
-          value: formData.cvv,
-          onChange: handleChange,
-        },
-        {
-          label: "Mês de vencimento",
-          name: "mesVencimento",
-          type: "text",
-          value: formData.mesVencimento,
-          onChange: handleChange,
-        },
-        {
-          label: "Ano de vencimento",
-          name: "anoVencimento",
-          type: "text",
-          value: formData.anoVencimento,
-          onChange: handleChange,
-        },
-      ]}
+          style: "currency",
+          currency: "BRL",
+        }
+      )}`}
       onSubmit={onSubmit}
       onPrevStep={onPrevStep}
       submitButtonText="Finalizar pagamento"
       prevButtonText="Voltar para a edição de endereço"
-    />
+    >
+      <div>
+        <Label htmlFor="nomeCartao">Nome no Cartão</Label>
+        <Input
+          type="text"
+          id="nomeCartao"
+          name="nomeCartao"
+          value={formData.nomeCartao}
+          onChange={(e) => handleChange("nomeCartao", e.target.value)}
+        />
+      </div>
+      <Flex>
+        <div>
+          <Label htmlFor="cartaoNum">Número do Cartão</Label>
+          <Input
+            type="text"
+            id="cartaoNum"
+            name="cartaoNum"
+            value={formData.cartaoNum}
+            onChange={(e) => handleChange("cartaoNum", e.target.value)}
+          />
+        </div>
+        <div>
+          <Label htmlFor="cvv">CVV</Label>
+          <Input
+            type="text"
+            id="cvv"
+            name="cvv"
+            value={formData.cvv}
+            onChange={(e) => handleChange("cvv", e.target.value)}
+          />
+        </div>
+      </Flex>
+      <Flex secondary>
+        <div>
+          <Label htmlFor="mesVencimento">Mês de vencimento</Label>
+          <Input
+            type="text"
+            id="mesVencimento"
+            name="mesVencimento"
+            value={formData.mesVencimento}
+            onChange={(e) => handleChange("mesVencimento", e.target.value)}
+          />
+        </div>
+        <div>
+          <Label htmlFor="anoVencimento">Ano de vencimento</Label>
+          <Input
+            type="text"
+            id="anoVencimento"
+            name="anoVencimento"
+            value={formData.anoVencimento}
+            onChange={(e) => handleChange("anoVencimento", e.target.value)}
+          />
+        </div>
+      </Flex>
+    </Form>
   );
 }
 

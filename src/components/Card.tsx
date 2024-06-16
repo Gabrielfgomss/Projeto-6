@@ -117,7 +117,7 @@ export const Card = ({
               <p>Serve quantas pessoas? {modalContent.quantidade}</p>
               <Button secondary={secondary} onClick={handleAddToCart}>
                 Adicionar ao carrinho -{" "}
-                {valor?.toLocaleString("pt-BR", {
+                {Number(valor).toLocaleString("pt-BR", {
                   currency: "BRL",
                   style: "currency",
                 })}

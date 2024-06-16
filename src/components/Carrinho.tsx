@@ -17,7 +17,7 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
   const handleRemove = (id: number) => {
     dispatch(remover(id));
   };
-
+  console.log(total)
   return (
     <>
       {itens.map((item) => {
@@ -47,7 +47,7 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
       >
         <span>Valor total</span>
         <span>
-          {total.toLocaleString("pt-BR", {
+          {Number(total).toLocaleString("pt-BR", {
             currency: "BRL",
             style: "currency",
           })}
