@@ -1,5 +1,5 @@
 export interface Prato {
-  nome: string;
+  titulo: string;
   descricao: string;
   capa: string;
   id: number;
