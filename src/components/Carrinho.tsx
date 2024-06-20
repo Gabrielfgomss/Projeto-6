@@ -26,7 +26,7 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
           <Carrinho key={item.id}>
             <img src={item.capa} />
             <div>
-              <p>{item.nome}</p>
+              <p>{item.titulo}</p>
               <p>
                 {item.valor.toLocaleString("pt-BR", {
                   currency: "BRL",
