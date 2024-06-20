@@ -38,7 +38,7 @@ export const Header = () => {
       ) : (
         <Container>
           <img src={logo} alt="Logo" />
-          <h1>Viva experiências gastronômicasno conforto da sua casa</h1>
+          <h1>Viva experiências gastronômicas no conforto da sua casa</h1>
         </Container>
       )}
     </>

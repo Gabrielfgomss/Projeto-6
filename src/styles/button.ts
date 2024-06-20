@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const Button = styled.button<{ secondary?: boolean, header?: boolean }>`
+export const Button = styled.button<{
+  secondary?: boolean;
+  header?: boolean;
+}>`
   ${(props) =>
     props.secondary
       ? `
@@ -12,10 +15,11 @@ export const Button = styled.button<{ secondary?: boolean, header?: boolean }>`
     background-color: #e66767;
     color: #FFEBD9;
     width: 103px;`}
-  padding: 0.7em;
-  border-radius: 0.5em;
+  ${(props) =>
+    props.secondary ? "padding: 6px 0;margin: 5px 0;" : "padding: 5px;"}
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
   border: none;
+  font-size: 14px;
 `;

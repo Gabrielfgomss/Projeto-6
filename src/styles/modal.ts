@@ -55,11 +55,21 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
           flex-direction: column;
           justify-content: space-evenly;
 
+          h1 {
+            font-weight: 900;
+            font-size: 18px;
+          }
+          p {
+            font-weight: 400;
+            font-size: 14px;
+          }
+
           button {
             width: 30%;
+            font-weight: 700;
+            font-size: 14px;
           }
         }
       }
-      `
-  }
+      `}
 `;

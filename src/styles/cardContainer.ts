@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.section<{ secondary?: boolean }>`
-  display: grid;
-  grid-template-columns: ${(props) =>
-    props.secondary ? "1fr 1fr 1fr" : "1fr 1fr"};
-  padding: 0 5em;
+  padding: 2em 0em;
+  width: 1080px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   background-color: #fff8f2;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  padding: 4em 12em;
+  gap: 1.5em;
+  margin: auto;
 `;

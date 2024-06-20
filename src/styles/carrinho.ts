@@ -3,31 +3,33 @@ import styled from "styled-components";
 export const Carrinho = styled.div`
   display: flex;
   flex-direction: row;
-  height: 140px;
+  height: 100px;
   background-color: #ffebd9;
   color: #e66767;
+  padding: 10px;
+  gap: 10px;
 
   > img {
-    width: 30%;
-    padding: 0.5em;
+    width: 80px;
+    height: 80px;
   }
 
   div {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    padding: 0.5em 1em;
+    justify-content: space-around;
+    width: 100%;
 
     p {
+      font-size: 14px;
       text-align: left;
     }
 
     .icon {
       text-align: end;
       img {
-        width: 10%;
-        margin-top: 35px;
+        width: 16px;
+        height: 16px;
       }
     }
   }
