@@ -44,6 +44,7 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
         style={{
           display: "flex",
           justifyContent: "space-between",
+          marginTop: "24px"
         }}
       >
         <span>Valor total</span>

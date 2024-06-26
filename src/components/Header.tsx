@@ -19,26 +19,30 @@ export const Header = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  
+
   return (
     <>
       {restauranteId ? (
-        <Container restaurante={restauranteId ? true : false}>
-          <Link to="/">Restaurantes</Link>
-          <img src={logo} alt="Logo" />
-          <p onClick={handleClick} style={{ cursor: "pointer" }}>
-            {itens.length} produto(s) no carrinho
-          </p>
-          {isModalOpen && (
-            <Modal onClose={handleCloseModal} secondary>
-              <Stepper />
-            </Modal>
-          )}
+        <Container restaurante={restauranteId}>
+          <header>
+            <Link to="/">Restaurantes</Link>
+            <img src={logo} alt="Logo" />
+            <p onClick={handleClick} style={{ cursor: "pointer" }}>
+              {itens.length} produto(s) no carrinho
+            </p>
+            {isModalOpen && (
+              <Modal onClose={handleCloseModal} secondary>
+                <Stepper />
+              </Modal>
+            )}
+          </header>
         </Container>
       ) : (
         <Container>
-          <img src={logo} alt="Logo" />
-          <h1>Viva experiências gastronômicas no conforto da sua casa</h1>
+          <header>
+            <img src={logo} alt="Logo" />
+            <h1>Viva experiências gastronômicas no conforto da sua casa</h1>
+          </header>
         </Container>
       )}
     </>

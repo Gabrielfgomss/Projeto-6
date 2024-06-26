@@ -88,7 +88,7 @@ export const Card = ({
         <div className="info">
           <div>
             <h2>{titulo}</h2>
-            <span>
+            <span className="rate">
               <span>{nota}</span>
               <img src={estrela} alt="" className="estrela" />
             </span>
@@ -96,7 +96,7 @@ export const Card = ({
           <p>{descricao}</p>
           {restauranteId ? (
             <Button secondary={secondary} onClick={handleClick}>
-              Mais detalhes
+              Adicionar ao carrinho
             </Button>
           ) : (
             <Link to={`/restaurante/${id}`}>

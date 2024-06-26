@@ -9,6 +9,7 @@ export const Main = () => {
   );
   return (
     <CardContainer>
+      <div className="container">
       {listaDeRestaurantes.map(
         ({
           capa,
@@ -36,6 +37,7 @@ export const Main = () => {
           );
         }
       )}
+      </div>
     </CardContainer>
   );
 };

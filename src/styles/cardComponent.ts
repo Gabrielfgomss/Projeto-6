@@ -7,39 +7,39 @@ export const CardComponent = styled.div<{
 }>`
   display: flex;
   flex-direction: column;
+
   ${(props) =>
     props.secondary
       ? `
           width: 320px;
+          padding: 8px;
         `
       : `
           width: 472px;
-          height: 410px;
         `}
   border: 1px solid #e66767;
-  margin: auto;
+  background-color: #ffffff;
   background-color: ${(props) => (props.secondary ? "#E66767" : "")};
   color: ${(props) => (props.secondary ? "#FFEBD9" : "#E66767;")};
 
   .cover {
     position: relative;
     ${(props) =>
-      props.secondary
-        ? `
+      props.secondary &&
+      `
     display: flex;
-    justify-content: center;
-    padding: 0.5em 0em;`
-        : ""}
+    justify-content: center;`}
     height: ${(props) => (props.secondary ? "" : "217px")};
     img {
-      width: ${(props) => (props.secondary ? "304px" : "100%")};
+      width: 100%;
       height: ${(props) => (props.secondary ? "167px" : "100%")};
+      object-fit: cover;
     }
 
     .sticker {
       position: absolute;
-      right: calc(10px);
-      top: 30px;
+      right: 16px;
+      top: 16px;
       display: ${(props) => (props.secondary ? "none" : "flex")};
       gap: 0.5em;
       font-size: 12px;
@@ -48,8 +48,7 @@ export const CardComponent = styled.div<{
       span {
         background-color: #e66767;
         color: white;
-        padding: 0.3em;
-        border-radius: 0.2em;
+        padding: 0.5em;
         font-weight: 700;
       }
     }
@@ -59,34 +58,33 @@ export const CardComponent = styled.div<{
     ${(props) =>
       props.secondary
         ? `
-    padding: 0.7em;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    margin-top: 8px;
     `
-        : `padding: 0.7em;
+        : `
+    padding: 8px;
+    gap: 16px;
     display: flex;
     flex-direction: column;
     `}
     p {
-      ${(props ) => props.secondary ? 
-      `
-        width: 300px;                 
-        height: 120px;                
+      ${(props) =>
+        props.secondary
+          ? `            
         overflow: hidden;             
         display: -webkit-box;         
         -webkit-line-clamp: 6;   
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;      
-        line-height: 20px; 
+        line-height: 22px;
+        font-weight: 400;
+        margin: 8px 0px; 
       `
-      : 
-      `
-        padding: 10px 0;
+          : `
         font-size: 14px;
         line-height: 20px;
       `}
-      
     }
     h2 {
       font-size: 18px;
@@ -98,11 +96,17 @@ export const CardComponent = styled.div<{
       justify-content: space-between;
       align-items: center;
 
-      span {
-        display: flex;
-        gap: 4px;
-        align-items: center;
-        font-weight: 700;
+      .rate {
+        ${(props) =>
+          props.secondary
+            ? "display: none;"
+            : `
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            span {
+              font-weight: 700;
+            }`};
       }
     }
   }

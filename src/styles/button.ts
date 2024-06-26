@@ -16,7 +16,7 @@ export const Button = styled.button<{
     color: #FFEBD9;
     width: 103px;`}
   ${(props) =>
-    props.secondary ? "padding: 6px 0;margin: 5px 0;" : "padding: 5px;"}
+    props.secondary ? "padding: 6px 0;" : "padding: 5px;"}
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;

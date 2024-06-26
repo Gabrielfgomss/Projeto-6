@@ -33,7 +33,7 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
       width: 20%;
       background-color: #e66767;
       color: #ffebd9;
-      padding: 1em;
+      padding: 8px;
       display: flex;
       flex-direction: column;
       gap: 1em;
@@ -42,18 +42,22 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
       background-color: #e66767;
       color: #ffebd9;
       width: 70%;
-      padding: 3em;
+      padding: 32px;
       border-radius: 8px;
+
       section {
         display: flex;
         gap: 2em;
         img {
-          width: 30%;
+          width: 280px;
+          height: 280px;
+          object-fit: cover;
         }
         div {
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
+          justify-content: space-between;
+          gap: 16px;
 
           h1 {
             font-weight: 900;
@@ -68,6 +72,7 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
             width: 30%;
             font-weight: 700;
             font-size: 14px;
+            margin-bottom: 27px;
           }
         }
       }

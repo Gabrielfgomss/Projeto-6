@@ -1,33 +1,35 @@
 import styled from "styled-components";
 
 const CheckOutContainer = styled.div`
-  padding: 20px;
-  border-radius: 8px;
   color: white;
-  max-width: 400px;
-  margin: 0 auto;
+  margin-top: 32px;
   text-align: left;
 `;
 
 const Title = styled.h2`
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 700;
 `;
 
 const Text = styled.p`
   margin-bottom: 10px;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 400;
 `;
 
 const Button = styled.button`
   display: block;
-  width: calc(100% - 20px);
-  margin: 10px auto;
-  padding: 10px;
-  background-color: #ff8a80;
+  width: 100%;
+  margin: 24px auto;
+  padding: 3.5px;
+  background-color: #FFEBD9;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  color: white;
-  font-weight: bold;
+  color: #E66767;
+  font-weight: 700;
+  font-size: 14px;
 `;
 
 interface CheckOutProps {
