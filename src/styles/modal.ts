@@ -41,13 +41,19 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
       : `
       background-color: #e66767;
       color: #ffebd9;
-      width: 70%;
+      width: 1024px;
       padding: 32px;
-      border-radius: 8px;
+
 
       section {
         display: flex;
         gap: 2em;
+
+        .close {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+        }
         img {
           width: 280px;
           height: 280px;
@@ -69,7 +75,7 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
           }
 
           button {
-            width: 30%;
+            width: 218px;
             font-weight: 700;
             font-size: 14px;
             margin-bottom: 27px;

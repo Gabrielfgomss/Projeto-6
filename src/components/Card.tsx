@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import estrela from "../../public/estrela.svg";
+import close from "../../public/close.png";
 import { Button } from "../styles/button";
 import { CardComponent } from "../styles/cardComponent";
 import { useDispatch } from "react-redux";
@@ -122,6 +123,7 @@ export const Card = ({
                 })}
               </Button>
             </div>
+            <img src={close} className="close" onClick={handleCloseModal}/>
           </section>
         </Modal>
       )}

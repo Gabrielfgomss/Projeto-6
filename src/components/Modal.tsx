@@ -1,7 +1,7 @@
 import { ModalOverlay, ModalContent } from "../styles/modal";
 
 interface ModalProps {
-  onClose: () => void;
+  onClose?: () => void;
   children: React.ReactNode;
   secondary?: boolean;
 }
