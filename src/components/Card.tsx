@@ -14,7 +14,7 @@ export interface CardProps {
   tipoComida?: string;
   titulo: string;
   descricao?: string;
-  nota?: string;
+  nota?: number;
   id: number;
   quantidade?: string;
   valor?: number;

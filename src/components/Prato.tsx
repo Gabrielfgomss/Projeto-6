@@ -1,46 +1,53 @@
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { RootReducer } from "../store";
 import { CardContainer } from "../styles/cardContainer";
 import { Card } from "./Card";
 import { Banner, Overlay } from "../styles/hero";
+import { useEffect, useState } from "react";
+import { Restaurante } from "../utils/models";
 
 export const Prato = () => {
-  const { itens: listaDeRestaurantes } = useSelector(
-    (state: RootReducer) => state.restaurante
-  );
-
   const { restauranteId } = useParams();
-  const [restaurante] = listaDeRestaurantes.filter(
-    (restaurante) => restaurante.id.toString() === restauranteId
-  );
+  useEffect(() => {
+    fetch("https://fake-api-tau.vercel.app/api/efood/restaurantes")
+      .then((res) => res.json())
+      .then((res) => {
+        const restaurante = res.find(
+          (restaurante: Restaurante) =>
+            restaurante.id.toString() === restauranteId
+        );
+        setRestaurantes(restaurante);
+      });
+  }, [restauranteId]);
 
-  return (
-    <CardContainer secondary>
-      <Banner bgImage={restaurante.capa}>
-        <Overlay>
-          <div className="hero-text">
-            <p>{restaurante.tipoComida}</p>
-            <p>{restaurante.nomeRestaurante}</p>
-          </div>
-        </Overlay>
-      </Banner>
-      <div className="container">
-        {restaurante.pratos.map((prato) => (
-          <>
-            <Card
-              secondary
-              btnText="Adicionar ao carrinho"
-              capa={prato.capa}
-              titulo={prato.nome}
-              descricao={prato.descricao}
-              id={prato.id}
-              quantidade={prato.quantidade}
-              valor={prato.valor}
-            />
-          </>
-        ))}
-      </div>
-    </CardContainer>
-  );
+  const [restaurante, setRestaurantes] = useState<Restaurante | undefined>();
+  if (restaurante !== undefined) {
+    return (
+      <CardContainer secondary>
+        <Banner bgImage={restaurante.capa}>
+          <Overlay>
+            <div className="hero-text">
+              <p>{restaurante.tipo}</p>
+              <p>{restaurante.titulo}</p>
+            </div>
+          </Overlay>
+        </Banner>
+        <div className="container">
+          {restaurante.cardapio.map((prato) => (
+            <>
+              <Card
+                secondary
+                btnText="Adicionar ao carrinho"
+                capa={prato.foto}
+                titulo={prato.nome}
+                descricao={prato.descricao}
+                id={prato.id}
+                quantidade={prato.porcao}
+                valor={prato.preco}
+              />
+            </>
+          ))}
+        </div>
+      </CardContainer>
+    );
+  }
 };

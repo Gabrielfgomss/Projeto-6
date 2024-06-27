@@ -1,19 +1,19 @@
 export interface Prato {
-  titulo: string;
+  nome: string;
   descricao: string;
-  capa: string;
+  foto: string;
   id: number;
-  quantidade: string;
-  valor: number;
+  porcao: string;
+  preco: number;
 }
 
 export interface Restaurante {
   capa: string;
-  destaque?: boolean;
-  tipoComida?: string;
-  nomeRestaurante: string;
-  descricaoRestaurante: string;
-  nota?: string;
+  destacado?: boolean;
+  tipo?: string;
+  titulo: string;
+  descricao: string;
+  avaliacao?: number;
   id: number;
-  pratos: Prato[];
+  cardapio: Prato[];
 }
