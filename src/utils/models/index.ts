@@ -5,6 +5,8 @@ export interface Prato {
   nome: string;
   porcao: string;
   preco: number;
+  capa?: string;
+  titulo?: string;
 }
 
 export interface Restaurante {
