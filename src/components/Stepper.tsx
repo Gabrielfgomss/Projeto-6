@@ -9,10 +9,11 @@ import CheckOut from "./checkOut";
 function Stepper() {
   const { itens } = useSelector((state: RootReducer) => state.carrinho);
   const total = itens.reduce((accumulator, item) => {
-    accumulator += item.valor;
+    accumulator += item.preco;
     return accumulator;
   }, 0);
-
+  
+  console.log(itens)
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {

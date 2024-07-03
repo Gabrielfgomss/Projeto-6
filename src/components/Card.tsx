@@ -10,14 +10,14 @@ import { adicionar } from "../store/reducers/carrinho";
 
 export interface CardProps {
   capa: string;
-  destaque?: boolean;
-  tipoComida?: string;
-  titulo: string;
+  destacado?: boolean;
+  tipo?: string;
+  titulo?: string;
   descricao?: string;
-  nota?: number;
+  avaliacao?: number;
   id: number;
-  quantidade?: string;
-  valor?: number;
+  porcao?: string;
+  preco?: number;
 }
 
 interface CardStyles {
@@ -27,16 +27,16 @@ interface CardStyles {
 
 export const Card = ({
   capa,
-  destaque,
-  tipoComida,
+  destacado,
+  tipo,
   titulo,
   descricao,
-  nota,
+  avaliacao,
   id,
   secondary,
   btnText,
-  quantidade,
-  valor,
+  porcao,
+  preco,
 }: CardProps & CardStyles) => {
   const dispatch = useDispatch();
 
@@ -44,18 +44,18 @@ export const Card = ({
 
   const [modalContent, setModalContent] = useState<CardProps | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  console.log(titulo)
   const handleClick = () => {
     setModalContent({
       capa,
-      destaque,
-      tipoComida,
+      destacado,
+      tipo,
       titulo,
       descricao,
-      nota,
+      avaliacao,
       id,
-      quantidade,
-      valor,
+      porcao,
+      preco,
     });
     setIsModalOpen(true);
   };
@@ -72,17 +72,17 @@ export const Card = ({
   };
   return (
     <>
-      <CardComponent destaque={destaque} secondary={secondary}>
+      <CardComponent destaque={destacado} secondary={secondary}>
         <div className="cover">
           <img src={capa} alt="Prato principal" />
           <span className="sticker">
-            {destaque ? (
+            {destacado ? (
               <>
                 <span>Destaque da semana</span>
-                <span>{tipoComida}</span>
+                <span>{tipo}</span>
               </>
             ) : (
-              <span>{tipoComida}</span>
+              <span>{tipo}</span>
             )}
           </span>
         </div>
@@ -90,7 +90,7 @@ export const Card = ({
           <div>
             <h2>{titulo}</h2>
             <span className="rate">
-              <span>{nota}</span>
+              <span>{avaliacao}</span>
               <img src={estrela} alt="" className="estrela" />
             </span>
           </div>
@@ -114,10 +114,10 @@ export const Card = ({
             <div>
               <h1>{modalContent.titulo}</h1>
               <p>{modalContent.descricao}</p>
-              <p>Serve quantas pessoas? {modalContent.quantidade}</p>
+              <p>Serve quantas pessoas? {modalContent.porcao}</p>
               <Button secondary={secondary} onClick={handleAddToCart}>
                 Adicionar ao carrinho -{" "}
-                {valor?.toLocaleString("pt-BR", {
+                {preco?.toLocaleString("pt-BR", {
                   currency: "BRL",
                   style: "currency",
                 })}

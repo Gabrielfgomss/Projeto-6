@@ -13,7 +13,7 @@ interface CarrinhoContainerProps {
 function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
   const { itens } = useSelector((state: RootReducer) => state.carrinho);
   const dispatch = useDispatch();
-
+  console.log(itens)
   const handleRemove = (id: number) => {
     console.log(id);
     dispatch(remover(id));
@@ -28,7 +28,7 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
             <div>
               <p>{item.titulo}</p>
               <p>
-                {item.valor.toLocaleString("pt-BR", {
+                {item.preco.toLocaleString("pt-BR", {
                   currency: "BRL",
                   style: "currency",
                 })}
@@ -49,7 +49,7 @@ function CarrinhoContainer({ total, nextStep }: CarrinhoContainerProps) {
       >
         <span>Valor total</span>
         <span>
-          {total.toLocaleString("pt-BR", {
+          {Number(total).toLocaleString("pt-BR", {
             currency: "BRL",
             style: "currency",
           })}

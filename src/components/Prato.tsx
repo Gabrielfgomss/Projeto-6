@@ -41,8 +41,8 @@ export const Prato = () => {
                 titulo={prato.nome}
                 descricao={prato.descricao}
                 id={prato.id}
-                quantidade={prato.porcao}
-                valor={prato.preco}
+                porcao={prato.porcao}
+                preco={prato.preco}
               />
             </>
           ))}

@@ -33,10 +33,10 @@ export const Main = () => {
                     key={id}
                     capa={capa}
                     descricao={descricao}
-                    destaque={destacado}
+                    destacado={destacado}
                     titulo={titulo}
-                    nota={avaliacao}
-                    tipoComida={tipo}
+                    avaliacao={avaliacao}
+                    tipo={tipo}
                     id={id}
                   />
                 </>
