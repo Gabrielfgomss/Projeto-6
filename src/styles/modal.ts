@@ -68,10 +68,12 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
           h1 {
             font-weight: 900;
             font-size: 18px;
+            color: #FFFFFF;
           }
           p {
             font-weight: 400;
             font-size: 14px;
+            color: #FFFFFF;
           }
 
           button {
@@ -79,6 +81,7 @@ export const ModalContent = styled.div<{ secondary?: boolean }>`
             font-weight: 700;
             font-size: 14px;
             margin-bottom: 27px;
+            padding: 3.5px 0;
           }
         }
       }
