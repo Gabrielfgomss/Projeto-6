@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { EnderecoFormState, updateField } from "../store/reducers/enderecoForm";
 import Form from "./Form";
 import { Label, Input, Flex } from "../styles/form";
+import { Payment } from "../utils/models";
 
 interface EnderecoProps {
   onPrevStep: () => void;
   nextStep: () => void;
+  onSubmit: (delivery: Payment) => void;
 }
 
-function Endereco({ onPrevStep, nextStep }: EnderecoProps) {
+function Endereco({ onPrevStep, nextStep, onSubmit }: EnderecoProps) {
   const dispatch = useDispatch();
   const formData = useSelector((state: RootReducer) => state.enderecoForm);
 
@@ -18,6 +20,21 @@ function Endereco({ onPrevStep, nextStep }: EnderecoProps) {
   };
 
   const handleSubmit = () => {
+    onSubmit({
+      delivery: {
+        receiver: formData.nome,
+        address: {
+          city: formData.cidade,
+          complement:
+            formData.complemento == undefined ? "" : formData.complemento,
+          description:
+            formData.complemento == undefined ? "" : formData.complemento,
+          number: Number(formData.numero),
+          zipCode: formData.cep,
+        },
+      },
+    });
+
     nextStep();
   };
   return (
@@ -72,7 +89,7 @@ function Endereco({ onPrevStep, nextStep }: EnderecoProps) {
         <div>
           <Label htmlFor="numero">Número</Label>
           <Input
-            type="text"
+            type="number"
             id="numero"
             name="numero"
             value={formData.numero}

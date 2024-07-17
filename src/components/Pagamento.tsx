@@ -6,19 +6,37 @@ import {
 } from "../store/reducers/pagamentoForm";
 import Form from "./Form";
 import { Label, Input, Flex } from "../styles/form";
+import { Payment } from "../utils/models";
 
 interface PagamentoProps {
   onPrevStep: () => void;
+  nextStep: () => void;
   total: number;
-  onSubmit: () => void;
+  onSubmit: (payment: Payment) => void;
 }
 
-function Pagamento({ onPrevStep, onSubmit, total }: PagamentoProps) {
+function Pagamento({ onPrevStep, onSubmit, total, nextStep }: PagamentoProps) {
   const dispatch = useDispatch();
   const formData = useSelector((state: RootReducer) => state.pagamentoForm);
 
   const handleChange = (name: keyof PagamentoFormState, value: string) => {
     dispatch(updateField({ name, value }));
+  };
+
+  const handleSubmit = () => {
+    onSubmit({
+      card: {
+        code: Number(formData.cvv),
+        number: formData.cartaoNum,
+        expires: {
+          month: Number(formData.mesVencimento),
+          year: Number(formData.anoVencimento),
+        },
+        name: formData.nomeCartao,
+      },
+    });
+
+    nextStep()
   };
 
   return (
@@ -27,7 +45,7 @@ function Pagamento({ onPrevStep, onSubmit, total }: PagamentoProps) {
         style: "currency",
         currency: "BRL",
       })}`}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       onPrevStep={onPrevStep}
       submitButtonText="Finalizar pagamento"
       prevButtonText="Voltar para a edição de endereço"
@@ -56,7 +74,7 @@ function Pagamento({ onPrevStep, onSubmit, total }: PagamentoProps) {
         <div>
           <Label htmlFor="cvv">CVV</Label>
           <Input
-            type="text"
+            type="number"
             id="cvv"
             name="cvv"
             value={formData.cvv}
@@ -68,7 +86,7 @@ function Pagamento({ onPrevStep, onSubmit, total }: PagamentoProps) {
         <div>
           <Label htmlFor="mesVencimento">Mês de vencimento</Label>
           <Input
-            type="text"
+            type="number"
             id="mesVencimento"
             name="mesVencimento"
             value={formData.mesVencimento}
@@ -78,7 +96,8 @@ function Pagamento({ onPrevStep, onSubmit, total }: PagamentoProps) {
         <div>
           <Label htmlFor="anoVencimento">Ano de vencimento</Label>
           <Input
-            type="text"
+            type="number"
+            min="4"
             id="anoVencimento"
             name="anoVencimento"
             value={formData.anoVencimento}
