@@ -53,6 +53,7 @@ function Endereco({ onPrevStep, nextStep, onSubmit }: EnderecoProps) {
           name="nome"
           value={formData.nome}
           onChange={(e) => handleChange("nome", e.target.value)}
+          required
         />
       </div>
       <div>
@@ -63,6 +64,7 @@ function Endereco({ onPrevStep, nextStep, onSubmit }: EnderecoProps) {
           name="endereco"
           value={formData.endereco}
           onChange={(e) => handleChange("endereco", e.target.value)}
+          required
         />
       </div>
       <div>
@@ -73,6 +75,7 @@ function Endereco({ onPrevStep, nextStep, onSubmit }: EnderecoProps) {
           name="cidade"
           value={formData.cidade}
           onChange={(e) => handleChange("cidade", e.target.value)}
+          required
         />
       </div>
       <Flex>
@@ -84,6 +87,7 @@ function Endereco({ onPrevStep, nextStep, onSubmit }: EnderecoProps) {
             name="cep"
             value={formData.cep}
             onChange={(e) => handleChange("cep", e.target.value)}
+            required
           />
         </div>
         <div>
@@ -94,6 +98,7 @@ function Endereco({ onPrevStep, nextStep, onSubmit }: EnderecoProps) {
             name="numero"
             value={formData.numero}
             onChange={(e) => handleChange("numero", e.target.value)}
+            required
           />
         </div>
       </Flex>

@@ -58,6 +58,7 @@ function Pagamento({ onPrevStep, onSubmit, total, nextStep }: PagamentoProps) {
           name="nomeCartao"
           value={formData.nomeCartao}
           onChange={(e) => handleChange("nomeCartao", e.target.value)}
+          required
         />
       </div>
       <Flex>
@@ -69,6 +70,7 @@ function Pagamento({ onPrevStep, onSubmit, total, nextStep }: PagamentoProps) {
             name="cartaoNum"
             value={formData.cartaoNum}
             onChange={(e) => handleChange("cartaoNum", e.target.value)}
+            required
           />
         </div>
         <div>
@@ -79,6 +81,7 @@ function Pagamento({ onPrevStep, onSubmit, total, nextStep }: PagamentoProps) {
             name="cvv"
             value={formData.cvv}
             onChange={(e) => handleChange("cvv", e.target.value)}
+            required
           />
         </div>
       </Flex>
@@ -91,6 +94,7 @@ function Pagamento({ onPrevStep, onSubmit, total, nextStep }: PagamentoProps) {
             name="mesVencimento"
             value={formData.mesVencimento}
             onChange={(e) => handleChange("mesVencimento", e.target.value)}
+            required
           />
         </div>
         <div>
@@ -102,6 +106,7 @@ function Pagamento({ onPrevStep, onSubmit, total, nextStep }: PagamentoProps) {
             name="anoVencimento"
             value={formData.anoVencimento}
             onChange={(e) => handleChange("anoVencimento", e.target.value)}
+            required
           />
         </div>
       </Flex>
